@@ -35,15 +35,6 @@ function decrement() {
   count.value--;
   console.log(count.value);
 }
-
-const tempArray = ref([
-  "alface",
-  "cebola",
-  "pão naan",
-  "pepino",
-  "rabanete",
-  "tomate",
-]);
 </script>
 
 <template>
@@ -64,7 +55,9 @@ const tempArray = ref([
       </div>
 
       <div class="card-tags">
-        <div class="tag" v-for="item in tempArray">{{ item }}</div>
+        <div class="tag" v-for="item in deliveryStore.menuItem.ingredients">
+          {{ item }}
+        </div>
       </div>
 
       <div class="counter">
@@ -121,7 +114,6 @@ const tempArray = ref([
   //   flex-direction: column;
   align-items: center;
   gap: 48px;
-  padding: 24px;
   position: relative;
   color: #e1e1e6;
   text-align: center;
@@ -280,7 +272,6 @@ const tempArray = ref([
         // font-size: 16.22px;
         // font-weight: 400;
         // line-height: 22.71px;
-        text-align: center;
       }
 
       & .counter {
@@ -348,8 +339,9 @@ const tempArray = ref([
     gap: 0;
 
     & .menu-item-image {
-      max-height: 300px;
-      min-height: 264px;
+      //   max-height: 300px;
+      height: 100%;
+      max-height: 264px;
       margin: 16px 26px 16px;
     }
 
