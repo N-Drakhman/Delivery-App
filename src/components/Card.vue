@@ -17,19 +17,14 @@ const formattedCount = computed(() => {
 
 function increment() {
   count.value++;
-  console.log(count.value);
 }
 
 function decrement() {
   count.value--;
-  console.log(count.value);
 }
 </script>
 
 <template>
-
-  
-  
   <div class="card">
     <button @click="favorite = !favorite" class="favorite">
       <transition name="icon-fade" mode="out-in">
@@ -177,6 +172,7 @@ function decrement() {
       font-size: 20px;
       line-height: 32px;
       font-weight: 700;
+      width: 24px;
     }
 
     &-include {
