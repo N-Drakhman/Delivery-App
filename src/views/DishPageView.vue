@@ -3,6 +3,7 @@ import axios from "axios";
 import { ref, computed, defineProps, onBeforeMount } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useDeliveryStore } from "@/stores/delivery-store";
+import BackButton from "@/components/BackButton.vue";
 const route = useRoute();
 const router = useRouter();
 const dishId = route.params.id;
@@ -38,6 +39,10 @@ function decrement() {
 </script>
 
 <template>
+  <div class="back-button">
+    <BackButton></BackButton>
+  </div>
+
   <div class="card">
     <img
       class="menu-item-image"
@@ -105,8 +110,14 @@ function decrement() {
   opacity: 0;
 }
 
+.back-button {
+  position: absolute;
+  top: 128px;
+  left: 122px;
+}
+
 .card {
-  width: calc(100% - 242px);
+  width: calc(100% - 244px);
   margin: 100px auto 155px;
   height: 100%;
   background: #000a0f;
