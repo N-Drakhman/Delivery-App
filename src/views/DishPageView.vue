@@ -29,13 +29,18 @@ const formattedCount = computed(() => {
 
 function increment() {
   count.value++;
-  console.log(count.value);
 }
 
 function decrement() {
   count.value--;
-  console.log(count.value);
 }
+
+const totalPrice = ref();
+
+const calcTotalPrice = computed(() => {
+  totalPrice.value = count.value * deliveryStore.menuItem.price;
+  return totalPrice.value.toFixed(2);
+});
 </script>
 
 <template>
@@ -92,7 +97,7 @@ function decrement() {
 
         <button class="counter-include">
           <i class="pi pi-shopping-cart"></i>
-          include &#9679; ${{ deliveryStore.menuItem.price }}
+          include &#9679; ${{ calcTotalPrice }}
         </button>
       </div>
     </div>
