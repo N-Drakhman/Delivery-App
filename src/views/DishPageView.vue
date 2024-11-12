@@ -91,6 +91,7 @@ function decrement() {
         </div>
 
         <button class="counter-include">
+          <i class="pi pi-shopping-cart"></i>
           include &#9679; ${{ deliveryStore.menuItem.price }}
         </button>
       </div>
@@ -122,7 +123,6 @@ function decrement() {
   height: 100%;
   background: #000a0f;
   display: flex;
-  //   flex-direction: column;
   align-items: center;
   gap: 48px;
   position: relative;
@@ -154,11 +154,8 @@ function decrement() {
       display: flex;
       gap: 24px;
       flex-wrap: wrap;
-      //   flex-direction: row;
-      //   flex-wrap: wrap;
 
       & .tag {
-        // display: flex;
         padding: 4px 8px;
         width: 82px;
         height: 32px;
@@ -221,9 +218,16 @@ function decrement() {
         background: #750310;
         width: 162px;
         height: 48px;
-        padding: 12px 24px;
         border-radius: 5px;
         font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        & i {
+          display: none;
+        }
 
         &:hover {
           background: #92000e;
@@ -258,7 +262,6 @@ function decrement() {
   .card {
     width: calc(100% - 112px);
     margin: 80px auto 34px;
-    // flex-direction: column;
     gap: 0;
 
     & .menu-item-image {
@@ -267,34 +270,16 @@ function decrement() {
       margin: 16px 26px 16px;
     }
 
-    &-panel {
-      //   width: 100%;
-      //   height: fit-content;
-      //   margin: 0;
-      //   align-items: center;
-
-      & .card-title {
-        // font-size: 27.04px;
-        // font-weight: 500;
-        // line-height: 37.86px;
-      }
-
-      & .card-description {
-        // font-size: 16.22px;
-        // font-weight: 400;
-        // line-height: 22.71px;
-      }
-
-      & .counter {
-        &-include {
-          //   width: 60%;
-        }
+    & .counter {
+      &-include {
+        height: 38px;
+        min-width: 162px;
       }
     }
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .card {
     width: calc(100% - 112px);
     margin: 80px auto 34px;
@@ -334,7 +319,6 @@ function decrement() {
         justify-content: center;
         &-include {
           height: 38px;
-          padding: 4px 24px;
           width: 50%;
         }
       }
@@ -350,7 +334,6 @@ function decrement() {
     gap: 0;
 
     & .menu-item-image {
-      //   max-height: 300px;
       height: 100%;
       max-height: 264px;
       margin: 16px 26px 16px;
@@ -381,8 +364,14 @@ function decrement() {
         gap: 12px;
         flex-direction: column;
         &-include {
-          height: 38px;
+          height: 40px;
           width: 100%;
+
+          & i {
+            display: block;
+            font-size: 15px;
+            padding: 4px 0;
+          }
         }
       }
     }
